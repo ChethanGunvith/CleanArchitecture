@@ -1,28 +1,33 @@
-- Building You can open the project in Android studio and press run.
+Clear Architecture with MVVM
+its main goal is the separation concerns by dividing software into layers , main idea is to separate code into different layers so that each layers will
+mind its own business. 
 
-- Testing The project uses both instrumentation tests that run on the device and local unit tests
-  that run on the computer.
-
-- Database Tests The project creates an in memory database for each database test but still runs
-  them on the device.
-
-- Local Unit Tests ViewModel Tests Each ViewModel is tested using local unit tests with mock
-  Repository implementations.
-
-- Repository Tests Each Repository is tested using local unit tests with mock web service and mock
-  database.
-
-- Webservice Tests The project uses [MockWebServer][mockwebserver] project to test REST api
-  interactions.
-
-Libraries
-- Android Architecture Components, Jet pack components 
-- Android Data Binding data-binding
-- Hilt for dependency injection
-- Retrofit for REST api communication
-- Glide for image loading
-- Espresso for UI tests
-- mockito for mocking in tests
+Clean Architecture maximizes the use of SOLID  principles.
+	Separation of Concerns 
+	Loose coupling
+	Easily Testable
 
 
-- Architecture pattern used for this Project is MVVM
+Three layers 
+Domain
+Data
+App(Presentation), 
+
+
+
+### Presentation layer : 
+It is mainly concerns with what user sees , drawing things, animations , in the most part its not going to handle a lot of thinking and its actually just going to pass that job on to the logic layer 
+ 
+ This layer is consisting of
+ - View , View model 
+ 
+### Domain (or Logic) layer : 
+logic layer is the first layer that the presentation layer communicate ,Here we put the logic of business: convert, filter, mix and sort raw data that comes from Data layer to be ready and easy to handle in Presentation layer.
+
+ This layer is consisting of
+ - Repository class - Single source of truth, most of logic will be hold here
+ 
+### Data Layer
+Here we put the logic of bringing data either from local source or server.
+persistence layer 
+- Entity, data base, retrofit interfaces
