@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="productOverview"
+            type="com.chethan.data.model.ProductOverview" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProductImage"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:contentDescription="@string/product_photo"
+                android:minWidth="200dp"
+                android:scaleType="fitXY"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:productImageUrl="@{productOverview.photo}" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSoldOut"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:minWidth="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_sold_out_label"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivProductImage"
+                app:productSoldOutStatus="@{productOverview.status}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@{productOverview.name}"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivProductImage"
+                app:layout_constraintLeft_toLeftOf="@id/ivProductImage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNumberOfLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_favorite_border"
+                android:padding="5dp"
+                android:text="@{productOverview.num_likes}"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivProductImage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNumberOfComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_outline_chat_bubble"
+                android:padding="5dp"
+                android:text="@{productOverview.num_comments}"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/tvNumberOfLike"
+                app:layout_constraintTop_toBottomOf="@id/ivProductImage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNumberOfPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivProductImage"
+                app:productPrize="@{productOverview.price}" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
