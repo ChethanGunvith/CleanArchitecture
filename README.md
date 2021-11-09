@@ -1,4 +1,6 @@
-Clear Architecture with MVVM
+
+This sample respresents Clear Architecture(Three layers - Domain, Data, App layers with MVVM)
+
 its main goal is the separation concerns by dividing software into layers , main idea is to separate code into different layers so that each layers will
 mind its own business. 
 
