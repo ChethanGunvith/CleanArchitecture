@@ -5,9 +5,9 @@ its main goal is the separation concerns by dividing software into layers , main
 mind its own business. 
 
 Clean Architecture maximizes the use of SOLID  principles.
-	Separation of Concerns 
-	Loose coupling
-	Easily Testable
+	Separation of Concerns,
+	Loose coupling,
+	Easily Testable,
 
 
 Three layers 
